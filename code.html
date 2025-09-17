@@ -1,0 +1,137 @@
+<html><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>Kolam Design Generator &amp; Analyzer</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #3b19e6;
+        --secondary-color: #f9f8fc;
+        --text-primary: #100e1b;
+        --text-secondary: #5a4e97;
+      }
+    </style>
+</head>
+<body class="bg-[var(--secondary-color)]" style='font-family: "Public Sans", "Noto Sans", sans-serif;'>
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden group/design-root">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e9e7f3] px-10 py-4">
+<div class="flex items-center gap-3 text-[var(--text-primary)]">
+<svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+<h2 class="text-[var(--text-primary)] text-xl font-bold leading-tight tracking-tighter">Kolam Canvas</h2>
+</div>
+<nav class="flex flex-1 justify-end items-center gap-8">
+<div class="flex items-center gap-6">
+<a class="text-[var(--text-primary)] text-base font-medium leading-normal hover:text-[var(--primary-color)] transition-colors" href="#">Gallery</a>
+<a class="text-[var(--text-primary)] text-base font-medium leading-normal hover:text-[var(--primary-color)] transition-colors" href="#">About</a>
+<a class="text-[var(--text-primary)] text-base font-medium leading-normal hover:text-[var(--primary-color)] transition-colors" href="#">Contact</a>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-11 px-5 bg-[var(--primary-color)] text-[var(--secondary-color)] text-base font-bold leading-normal tracking-wide shadow-sm hover:bg-opacity-90 transition-all">
+<span class="truncate">Start Designing</span>
+</button>
+</nav>
+</header>
+<main class="flex flex-1 flex-col items-center">
+<section class="w-full flex justify-center py-20 px-4 sm:px-10">
+<div class="layout-content-container flex flex-col w-full max-w-6xl">
+<div class="relative flex min-h-[520px] flex-col gap-8 items-center justify-center text-center rounded-xl overflow-hidden p-8" style='background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBhvlDmqOE57SpB9tWmhtnLP8jZzcle5Nwp-WsEBafaRfqQYSO9dDxOkd1eELsgzDDjpz2UPxke6ZBU-vRvHEnb-i4BMHwFvTasst3Mf0eUmJRoUu_t4F5V1CNlMs6IO0S9S-zKuX5PHWPJjTAC74YZIQl3oEXJKQMzKd5vGHeoqhwrRrS95hIs41oxEzt82YABzaX1siy9Kq57WPv5YK80owc1c8TvD3txVIeUxoDNgyLsSXssVuTVe5bxnMoYNadtR2Uu35h-XNk"); background-size: cover; background-position: center; background-repeat: no-repeat;'>
+<div class="absolute inset-0 bg-black bg-opacity-40"></div>
+<div class="relative z-10 flex flex-col gap-4">
+<h1 class="text-white text-5xl md:text-6xl font-black leading-tight tracking-tighter">Kolam Canvas: AI Meets Heritage</h1>
+<p class="text-gray-200 text-lg md:text-xl font-normal leading-normal max-w-3xl mx-auto">
+                    Explore the beauty of Kolam designs with the power of AI. Generate, analyze, and share your unique creations.
+                  </p>
+</div>
+<div class="relative z-10 flex flex-wrap gap-4 justify-center">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-6 bg-[var(--primary-color)] text-[var(--secondary-color)] text-base font-bold leading-normal tracking-wide shadow-lg hover:bg-opacity-90 transition-all transform hover:scale-105">
+<span class="truncate">Explore Gallery</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-6 bg-[var(--secondary-color)] text-[var(--text-primary)] text-base font-bold leading-normal tracking-wide shadow-lg hover:bg-gray-200 transition-all transform hover:scale-105">
+<span class="truncate">Start Designing</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full flex justify-center py-20 px-4 sm:px-10">
+<div class="layout-content-container flex max-w-6xl w-full flex-col md:flex-row items-center gap-12">
+<div class="flex-1">
+<img alt="A woman creating a Kolam design on the floor with rice flour" class="rounded-xl shadow-lg w-full h-auto object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdHGm3Al9zVeJF3ddTc_hLjxPbICVi_Ck4K3-Q4XBqyaplsZovkKyi5iyDN7Xi6b6TW-ipqvpvzgZUZl7eSZ8Ncyk8kfX4pq_sj3WEzNWqIs59O7E2fJRcmLumpW5KGLebWpclKmWes8zEtk8wrCk7NTPYIFlTA5FAkrB_m0RC8l0FvUodhYoYle0m1lYSnVrExx33sTONwSjxNQyQqy3Vyn58N75zJwvEImzxsTFkRt0Rrb6gBzK4qY8Ia2J_-dJdBDM1gmkoR4o"/>
+</div>
+<div class="flex flex-1 flex-col gap-4">
+<h2 class="text-[var(--text-primary)] text-4xl md:text-5xl font-bold leading-tight tracking-tighter">The Art of Kolam</h2>
+<p class="text-[var(--text-secondary)] text-lg md:text-xl font-normal leading-normal">A rich cultural heritage from Southern India, Kolam is a traditional art form of creating intricate patterns using rice flour. These geometric designs are more than just decoration; they are a symbol of auspiciousness, a welcome to deities, and a representation of the universe's harmony.</p>
+<p class="text-[var(--text-secondary)] text-lg md:text-xl font-normal leading-normal">Drawn daily at the entrance of homes, Kolams are believed to bring prosperity and good fortune while warding off evil spirits. The designs often consist of a continuous line looping around a grid of dots, symbolizing the infinite and cyclical nature of life.</p>
+</div>
+</div>
+</section>
+<section class="w-full flex justify-center py-20 px-4 sm:px-10 bg-white">
+<div class="layout-content-container flex flex-col max-w-6xl w-full gap-12">
+<div class="flex flex-col gap-4 text-center">
+<h2 class="text-[var(--text-primary)] text-4xl md:text-5xl font-bold leading-tight tracking-tighter">
+                  Features
+                </h2>
+<p class="text-[var(--text-secondary)] text-lg md:text-xl font-normal leading-normal max-w-3xl mx-auto">Discover the capabilities of Kolam Canvas.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="flex flex-col gap-4 rounded-xl border border-gray-200 bg-white p-6 text-center items-center shadow-sm hover:shadow-lg transition-shadow duration-300">
+<div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-[var(--primary-color)]">
+<span class="material-symbols-outlined text-4xl">auto_awesome</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-[var(--text-primary)] text-xl font-bold leading-tight">AI-Powered Generation</h3>
+<p class="text-[var(--text-secondary)] text-base font-normal leading-normal">Generate unique Kolam designs with advanced AI algorithms.</p>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-xl border border-gray-200 bg-white p-6 text-center items-center shadow-sm hover:shadow-lg transition-shadow duration-300">
+<div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-[var(--primary-color)]">
+<span class="material-symbols-outlined text-4xl">analytics</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-[var(--text-primary)] text-xl font-bold leading-tight">Design Analysis</h3>
+<p class="text-[var(--text-secondary)] text-base font-normal leading-normal">Analyze existing designs for symmetry, complexity, and more.</p>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-xl border border-gray-200 bg-white p-6 text-center items-center shadow-sm hover:shadow-lg transition-shadow duration-300">
+<div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-[var(--primary-color)]">
+<span class="material-symbols-outlined text-4xl">share</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-[var(--text-primary)] text-xl font-bold leading-tight">Share Your Art</h3>
+<p class="text-[var(--text-secondary)] text-base font-normal leading-normal">Share your creations with the community and beyond.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="flex justify-center border-t border-solid border-t-[#e9e7f3] bg-white">
+<div class="flex max-w-6xl flex-1 flex-col px-5 py-8">
+<div class="flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex flex-wrap items-center justify-center gap-6">
+<a class="text-[var(--text-secondary)] text-base font-medium leading-normal hover:text-[var(--primary-color)] transition-colors" href="#">Privacy Policy</a>
+<a class="text-[var(--text-secondary)] text-base font-medium leading-normal hover:text-[var(--primary-color)] transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="flex justify-center gap-4">
+<a class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors" href="#">
+<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46,6.56a8.88,8.88,0,0,1-2.56.7,4.45,4.45,0,0,0,1.96-2.46,8.8,8.8,0,0,1-2.82,1.08,4.4,4.4,0,0,0-7.5,4,12.48,12.48,0,0,1-9.05-4.6,4.4,4.4,0,0,0,1.36,5.86,4.35,4.35,0,0,1-2-.55v.05a4.4,4.4,0,0,0,3.52,4.3,4.4,4.4,0,0,1-2,.08,4.4,4.4,0,0,0,4.1,3.05,8.83,8.83,0,0,1-5.45,1.88,9.15,9.15,0,0,1-1.05-.06,12.42,12.42,0,0,0,6.7,2c8.08,0,12.5-6.7,12.5-12.5v-.56A8.93,8.93,0,0,0,22.46,6.56Z"></path></svg>
+</a>
+<a class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors" href="#">
+<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2.163A10.76,10.76,0,0,0,1.24,12.872a10.76,10.76,0,0,0,10.76,10.76,10.76,10.76,0,0,0,10.76-10.76A10.76,10.76,0,0,0,12,2.163Zm6.28,12.3A3.7,3.7,0,0,1,16.2,18.2H7.8a3.7,3.7,0,0,1-2.08-3.73V9.53a3.7,3.7,0,0,1,2.08-3.73H16.2a3.7,3.7,0,0,1,2.08,3.73Zm-2.08-6.19a.92.92,0,1,0,.92.92A.92.92,0,0,0,16.2,8.272ZM12,6.883A5.117,5.117,0,1,0,17.117,12,5.117,5.117,0,0,0,12,6.883Zm0,8.234a3.117,3.117,0,1,1,3.117-3.117A3.117,3.117,0,0,1,12,15.117Z"></path></svg>
+</a>
+<a class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors" href="#">
+<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22,12c0-5.52-4.48-10-10-10S2,6.48,2,12c0,4.84,3.44,8.87,8,9.8V15H8v-3h2V9.5C10,7.57,11.57,6,13.5,6H16v3h-1.5c-1,0-1.5.5-1.5,1.5V12h3l-.5,3H13v6.95c5.05-.5,9-4.76,9-9.95Z"></path></svg>
+</a>
+</div>
+<p class="text-[var(--text-secondary)] text-base font-normal leading-normal text-center md:text-right">© 2024 Kolam Canvas. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>
