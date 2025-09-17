@@ -134,4 +134,66 @@
 </footer>
 </div>
 </div>
-</body></html>
+<!-- Decorative Border -->
+<div class="decorative-border"></div>
+
+<!-- Floating Petals -->
+<div class="floating-petals"></div>
+
+<!-- Falling Petals -->
+<falling-petals></falling-petals>
+
+<script>
+/* Keyframes for CSS animations (inject into page) */
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes fall {
+  0% { opacity: 0; transform: translateY(-30px) scale(1) rotate(0deg);}
+  10% { opacity: 0.7;}
+  80% { opacity: 0.7;}
+  100% { opacity: 0; transform: translateY(100vh) scale(0.7) rotate(360deg);}
+}
+@keyframes float {
+  0% { left: 0; top: 30%; }
+  25% { left: 25vw; top: 10%; }
+  50% { left: 50vw; top: 70%; }
+  75% { left: 75vw; top: 20%; }
+  100% { left: 100vw; top: 30%; }
+}
+@keyframes rotate {
+  to { transform: translate(-50%, -50%) rotate(360deg);}
+}
+@keyframes rotate-reverse {
+  to { transform: rotate(-360deg);}
+}
+`;
+document.head.appendChild(style);
+
+// Generate floating petals
+const floatingPetalsContainer = document.querySelector('.floating-petals');
+for(let i=0; i<14; i++) {
+  const petal = document.createElement('div');
+  petal.className = 'petal';
+  petal.style.top = `${Math.random()*80+10}%`;
+  petal.style.left = `${Math.random()*80+5}%`;
+  floatingPetalsContainer.appendChild(petal);
+}
+
+// Generate falling petals
+const colors = ['petal-red', 'petal-orange', 'petal-purple', 'petal-pink', 'petal-gold'];
+function createFallingPetal() {
+  const container = document.querySelector('falling-petals');
+  const petal = document.createElement('div');
+  petal.className = `falling-petal ${colors[Math.floor(Math.random()*colors.length)]}`;
+  petal.style.left = `${Math.random()*100}%`;
+  petal.style.animationDuration = `${3+Math.random()*2}s`;
+  petal.style.opacity = 0;
+  container.appendChild(petal);
+
+  setTimeout(() => container.removeChild(petal), 5000);
+}
+// Animate petals every 250ms
+setInterval(createFallingPetal, 250);
+</script>
+</body>
+</html>
